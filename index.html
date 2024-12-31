@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        .navbar{
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .navbar-brand{
+            color: #007bff;
+
+        }
+        .navbar-brand img {
+            height: 80px;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #007bff;
+        }
+        .breadcrumb-item a{
+            text-decoration: none;
+            color: #007bff;
+        }
+        .form-section {
+            display: none;
+
+        }
+        .form-section.active {
+            display: block;
+            border: 1px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .breadcrumb-item ::after{
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="hlogo.png" alt="Madha Engineering College Logo">
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-5 text-center">
+        <h1>Application Form</h1>
+        <p class="text-muted" id="applicationNumber"></p>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container mb-5">
+        <div class="form-container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" id="formBreadcrumb" style=" color: #007bff; ">
+                    <li class="breadcrumb-item active">Applicant Details</li>
+                    <li class="breadcrumb-item">Parent Details</li>
+                    <li class="breadcrumb-item">Address Details</li>
+                    <li class="breadcrumb-item">Education Details</li>
+                    <li class="breadcrumb-item">Documents</li>
+                    <li class="breadcrumb-item">Declaration</li>
+                </ol>
+            </nav>
+
+            <!-- Multi-Step Form -->
+            <form id="applicationForm">
+            <!-- Section 1: Applicant Details -->
+<div class="form-section active" id="section1">
+    <h3>Applicant Details</h3>
+
+    <div class="row g-3">
+        <!-- Course and Category -->
+        <div class="col-md-6">
+            <label for="course" class="form-label">
+                <i class="bi bi-bookmark-fill"></i> Course
+            </label>
+            <input type="text" class="form-control" id="course" placeholder="Enter course">
+        </div>
+
+        <div class="col-md-6">
+            <label for="category" class="form-label">
+                <i class="bi bi-card-list"></i> Category
+            </label>
+            <input type="text" class="form-control" id="category" placeholder="Enter category">
+        </div>
+
+        <!-- Title and Name -->
+        <div class="col-md-4">
+            <label for="title" class="form-label">
+                <i class="bi bi-person-circle"></i> Title
+            </label>
+            <select class="form-select" id="title">
+                <option value="">Select...</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mrs.">Mrs.</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="firstName" class="form-label">
+                <i class="bi bi-person"></i> First Name
+            </label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+        </div>
+
+        <div class="col-md-4">
+            <label for="lastName" class="form-label">
+                <i class="bi bi-person"></i> Last Name
+            </label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+        </div>
+
+        <!-- Email and Mobile -->
+        <div class="col-md-6">
+            <label for="email" class="form-label">
+                <i class="bi bi-envelope-fill"></i> Email Address
+            </label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email address">
+        </div>
+
+        <div class="col-md-6">
+            <label for="mobile" class="form-label">
+                <i class="bi bi-telephone-fill"></i> Mobile Number
+            </label>
+            <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile number">
+        </div>
+
+        <!-- Date of Birth and Gender -->
+        <div class="col-md-6">
+            <label for="dob" class="form-label">
+                <i class="bi bi-calendar-event-fill"></i> Date of Birth
+            </label>
+            <input type="date" class="form-control" id="dob">
+        </div>
+
+        <div class="col-md-6">
+            <label for="gender" class="form-label">
+                <i class="bi bi-gender-ambiguous"></i> Gender
+            </label>
+            <select class="form-select" id="gender">
+                <option value="">Select...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- Nationality and Aadhaar -->
+        <div class="col-md-6">
+            <label for="nationality" class="form-label">
+                <i class="bi bi-globe"></i> Nationality
+            </label>
+            <input type="text" class="form-control" id="nationality" placeholder="Enter nationality">
+        </div>
+
+        <div class="col-md-6">
+            <label for="aadhaar" class="form-label">
+                <i class="bi bi-card-checklist"></i> Aadhaar Card Number
+            </label>
+            <input type="text" class="form-control" id="aadhaar" placeholder="Enter Aadhaar number">
+        </div>
+
+        <!-- Blood Group and Community -->
+        <div class="col-md-6">
+            <label for="bloodGroup" class="form-label">
+                <i class="bi bi-droplet-fill"></i> Blood Group
+            </label>
+            <select class="form-select" id="bloodGroup">
+                <option value="">Select...</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="community" class="form-label">
+                <i class="bi bi-people-fill"></i> Community
+            </label>
+            <input type="text" class="form-control" id="community" placeholder="Enter community">
+        </div>
+
+        <!-- Eligibility Fields -->
+        <div class="col-md-6">
+            <label for="firstGraduate" class="form-label">
+                <i class="bi bi-person-check"></i> Eligible for First Graduate
+            </label>
+            <select class="form-select" id="firstGraduate">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="govtSchool" class="form-label">
+                <i class="bi bi-building"></i> Eligible for 7.5% Govt School
+            </label>
+            <select class="form-select" id="govtSchool">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- PMSS and Mother Tongue -->
+        <div class="col-md-6">
+            <label for="pmss" class="form-label">
+                <i class="bi bi-patch-check-fill"></i> Eligible for PMSS
+            </label>
+            <select class="form-select" id="pmss">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="motherTongue" class="form-label">
+                <i class="bi bi-translate"></i> Mother Tongue
+            </label>
+            <input type="text" class="form-control" id="motherTongue" placeholder="Enter mother tongue">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Section 2: Parent Details -->
+<div class="form-section" id="section2">
+    <h3>Parent Details</h3>
+
+    <!-- Father's Details -->
+    <div class="row g-3 mt-3">
+        <h5>Father's Details</h5>
+        <div class="col-md-6">
+            <label for="fatherTitle" class="form-label">
+                <i class="bi bi-person-circle"></i> Father's Title
+            </label>
+            <select class="form-select" id="fatherTitle">
+                <option value="">Select...</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="fatherName" class="form-label">
+                <i class="bi bi-person"></i> Father's Name
+            </label>
+            <input type="text" class="form-control" id="fatherName" placeholder="Enter father's name">
+        </div>
+        <div class="col-md-6">
+            <label for="fatherMobile" class="form-label">
+                <i class="bi bi-telephone-fill"></i> Father's Mobile Number
+            </label>
+            <input type="tel" class="form-control" id="fatherMobile" placeholder="Enter father's mobile number">
+        </div>
+        <div class="col-md-6">
+            <label for="fatherEmail" class="form-label">
+                <i class="bi bi-envelope-fill"></i> Father's Email Address
+            </label>
+            <input type="email" class="form-control" id="fatherEmail" placeholder="Enter father's email">
+        </div>
+        <div class="col-md-6">
+            <label for="fatherOccupation" class="form-label">
+                <i class="bi bi-briefcase-fill"></i> Father's Occupation
+            </label>
+            <input type="text" class="form-control" id="fatherOccupation" placeholder="Enter father's occupation">
+        </div>
+    </div>
+
+    <!-- Mother's Details -->
+    <div class="row g-3 mt-3">
+        <h5>Mother's Details</h5>
+        <div class="col-md-6">
+            <label for="motherTitle" class="form-label">
+                <i class="bi bi-person-circle"></i> Mother's Title
+            </label>
+            <select class="form-select" id="motherTitle">
+                <option value="">Select...</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="motherName" class="form-label">
+                <i class="bi bi-person"></i> Mother's Name
+            </label>
+            <input type="text" class="form-control" id="motherName" placeholder="Enter mother's name">
+        </div>
+        <div class="col-md-6">
+            <label for="motherMobile" class="form-label">
+                <i class="bi bi-telephone-fill"></i> Mother's Mobile Number
+            </label>
+            <input type="tel" class="form-control" id="motherMobile" placeholder="Enter mother's mobile number">
+        </div>
+        <div class="col-md-6">
+            <label for="motherEmail" class="form-label">
+                <i class="bi bi-envelope-fill"></i> Mother's Email Address
+            </label>
+            <input type="email" class="form-control" id="motherEmail" placeholder="Enter mother's email">
+        </div>
+        <div class="col-md-6">
+            <label for="motherOccupation" class="form-label">
+                <i class="bi bi-briefcase-fill"></i> Mother's Occupation
+            </label>
+            <input type="text" class="form-control" id="motherOccupation" placeholder="Enter mother's occupation">
+        </div>
+    </div>
+
+    <!-- Guardian's Details -->
+    <div class="row g-3 mt-3">
+        <h5>Guardian's Details</h5>
+        <div class="col-md-6">
+            <label for="guardianTitle" class="form-label">
+                <i class="bi bi-person-circle"></i> Guardian's Title
+            </label>
+            <select class="form-select" id="guardianTitle">
+                <option value="">Select...</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="guardianName" class="form-label">
+                <i class="bi bi-person"></i> Guardian's Name
+            </label>
+            <input type="text" class="form-control" id="guardianName" placeholder="Enter guardian's name">
+        </div>
+        <div class="col-md-6">
+            <label for="guardianMobile" class="form-label">
+                <i class="bi bi-telephone-fill"></i> Guardian's Mobile Number
+            </label>
+            <input type="tel" class="form-control" id="guardianMobile" placeholder="Enter guardian's mobile number">
+        </div>
+        <div class="col-md-6">
+            <label for="guardianEmail" class="form-label">
+                <i class="bi bi-envelope-fill"></i> Guardian's Email ID
+            </label>
+            <input type="email" class="form-control" id="guardianEmail" placeholder="Enter guardian's email">
+        </div>
+        <div class="col-md-6">
+            <label for="guardianRelation" class="form-label">
+                <i class="bi bi-people-fill"></i> Relationship With Guardian
+            </label>
+            <input type="text" class="form-control" id="guardianRelation" placeholder="Enter relationship">
+        </div>
+    </div>
+</div>
+
+
+              <!-- Section 3: Address Details -->
+<div class="form-section" id="section3">
+    <h3>Address Details</h3>
+
+    <!-- Address for Correspondence -->
+    <div class="row g-3 mt-2">
+        <h5>Address for Correspondence</h5>
+        <div class="col-md-6">
+            <label for="corrCountry" class="form-label">
+                <i class="bi bi-globe"></i> Country
+            </label>
+            <select class="form-select" id="corrCountry">
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="corrState" class="form-label">
+                <i class="bi bi-map"></i> State
+            </label>
+            <input type="text" class="form-control" id="corrState" placeholder="Enter state">
+        </div>
+        <div class="col-md-6">
+            <label for="corrDistrict" class="form-label">
+                <i class="bi bi-geo-alt-fill"></i> District
+            </label>
+            <input type="text" class="form-control" id="corrDistrict" placeholder="Enter district">
+        </div>
+        <div class="col-md-6">
+            <label for="corrCity" class="form-label">
+                <i class="bi bi-building"></i> City
+            </label>
+            <input type="text" class="form-control" id="corrCity" placeholder="Enter city">
+        </div>
+        <div class="col-md-6">
+            <label for="corrAddress1" class="form-label">
+                <i class="bi bi-house"></i> Address Line 1
+            </label>
+            <input type="text" class="form-control" id="corrAddress1" placeholder="Enter address line 1">
+        </div>
+        <div class="col-md-6">
+            <label for="corrAddress2" class="form-label">
+                <i class="bi bi-house"></i> Address Line 2
+            </label>
+            <input type="text" class="form-control" id="corrAddress2" placeholder="Enter address line 2">
+        </div>
+        <div class="col-md-6">
+            <label for="corrPincode" class="form-label">
+                <i class="bi bi-postcard"></i> Pincode
+            </label>
+            <input type="text" class="form-control" id="corrPincode" placeholder="Enter pincode">
+        </div>
+        <div class="col-md-6">
+            <label for="isSameAddress" class="form-label">
+                <i class="bi bi-check-circle"></i> Is Permanent Address Same As Correspondence Address?
+            </label>
+            <select class="form-select" id="isSameAddress">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Permanent Address -->
+    <div class="row g-3 mt-2" id="permanentAddressSection">
+        <h5>Permanent Address</h5>
+        <div class="col-md-6">
+            <label for="permCountry" class="form-label">
+                <i class="bi bi-globe"></i> Country
+            </label>
+            <select class="form-select" id="permCountry">
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="permState" class="form-label">
+                <i class="bi bi-map"></i> State
+            </label>
+            <input type="text" class="form-control" id="permState" placeholder="Enter state">
+        </div>
+        <div class="col-md-6">
+            <label for="permDistrict" class="form-label">
+                <i class="bi bi-geo-alt-fill"></i> District
+            </label>
+            <input type="text" class="form-control" id="permDistrict" placeholder="Enter district">
+        </div>
+        <div class="col-md-6">
+            <label for="permCity" class="form-label">
+                <i class="bi bi-building"></i> City
+            </label>
+            <input type="text" class="form-control" id="permCity" placeholder="Enter city">
+        </div>
+        <div class="col-md-6">
+            <label for="permAddress1" class="form-label">
+                <i class="bi bi-house"></i> Address Line 1
+            </label>
+            <input type="text" class="form-control" id="permAddress1" placeholder="Enter address line 1">
+        </div>
+        <div class="col-md-6">
+            <label for="permAddress2" class="form-label">
+                <i class="bi bi-house"></i> Address Line 2
+            </label>
+            <input type="text" class="form-control" id="permAddress2" placeholder="Enter address line 2">
+        </div>
+        <div class="col-md-6">
+            <label for="permPincode" class="form-label">
+                <i class="bi bi-postcard"></i> Pincode
+            </label>
+            <input type="text" class="form-control" id="permPincode" placeholder="Enter pincode">
+        </div>
+    </div>
+</div>
+
+
+                <!-- Section 4: Education Details -->
+<div class="form-section" id="section4">
+    <h3>Education Details</h3>
+
+    <!-- 10th Details -->
+    <div class="row g-3">
+        <h5>10th Details</h5>
+        <div class="col-md-6">
+            <label for="tenthSchoolName" class="form-label">
+                <i class="bi bi-building"></i> School Name
+            </label>
+            <input type="text" class="form-control" id="tenthSchoolName" placeholder="Enter school name">
+        </div>
+        <div class="col-md-6">
+            <label for="tenthBoard" class="form-label">
+                <i class="bi bi-journal-bookmark-fill"></i> Board
+            </label>
+            <input type="text" class="form-control" id="tenthBoard" placeholder="Enter board name">
+        </div>
+        <div class="col-md-6">
+            <label for="tenthYear" class="form-label">
+                <i class="bi bi-calendar-check"></i> Year of Passing
+            </label>
+            <input type="number" class="form-control" id="tenthYear" placeholder="Enter year">
+        </div>
+        <div class="col-md-6">
+            <label for="tenthMarking" class="form-label">
+                <i class="bi bi-percent"></i> Marking Scheme
+            </label>
+            <select class="form-select" id="tenthMarking">
+                <option value="">Select...</option>
+                <option value="Percentage">Percentage</option>
+                <option value="CGPA">CGPA</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="tenthPercentage" class="form-label">
+                <i class="bi bi-graph-up"></i> Obtained Percentage/CGPA
+            </label>
+            <input type="text" class="form-control" id="tenthPercentage" placeholder="Enter percentage/CGPA">
+        </div>
+    </div>
+
+    <!-- After 10th Details -->
+    <div class="row g-3">
+        <h5>After 10th Qualification</h5>
+        <div class="col-md-6">
+            <label for="after10Qualification" class="form-label">
+                <i class="bi bi-mortarboard"></i> Qualification
+            </label>
+            <select class="form-select" id="after10Qualification">
+                <option value="">Select...</option>
+                <option value="12th">12th</option>
+                <option value="Diploma">Diploma</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 12th Details -->
+    <div class="row g-3">
+        <h5>12th Details</h5>
+        <div class="col-md-6">
+            <label for="twelfthSchoolName" class="form-label">
+                <i class="bi bi-building"></i> School Name
+            </label>
+            <input type="text" class="form-control" id="twelfthSchoolName" placeholder="Enter school name">
+        </div>
+        <div class="col-md-6">
+            <label for="twelfthBoard" class="form-label">
+                <i class="bi bi-journal-bookmark-fill"></i> Board
+            </label>
+            <input type="text" class="form-control" id="twelfthBoard" placeholder="Enter board name">
+        </div>
+        <div class="col-md-6">
+            <label for="twelfthYear" class="form-label">
+                <i class="bi bi-calendar-check"></i> Year of Passing
+            </label>
+            <input type="number" class="form-control" id="twelfthYear" placeholder="Enter year">
+        </div>
+        <div class="col-md-6">
+            <label for="twelfthResultStatus" class="form-label">
+                <i class="bi bi-info-circle"></i> Result Status
+            </label>
+            <select class="form-select" id="twelfthResultStatus">
+                <option value="">Select...</option>
+                <option value="Declared">Declared</option>
+                <option value="Awaiting">Awaiting</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="twelfthPercentage" class="form-label">
+                <i class="bi bi-graph-up"></i> Obtained Percentage/CGPA
+            </label>
+            <input type="text" class="form-control" id="twelfthPercentage" placeholder="Enter percentage/CGPA">
+        </div>
+        <div class="col-md-6">
+            <label for="physicsMarks" class="form-label">
+                <i class="bi bi-beaker"></i> Physics Marks
+            </label>
+            <input type="text" class="form-control" id="physicsMarks" placeholder="Enter physics marks">
+        </div>
+        <div class="col-md-6">
+            <label for="chemistryMarks" class="form-label">
+                <i class="bi bi-flask"></i> Chemistry Marks
+            </label>
+            <input type="text" class="form-control" id="chemistryMarks" placeholder="Enter chemistry marks">
+        </div>
+        <div class="col-md-6">
+            <label for="mathMarks" class="form-label">
+                <i class="bi bi-123"></i> Math Marks
+            </label>
+            <input type="text" class="form-control" id="mathMarks" placeholder="Enter math marks">
+        </div>
+    </div>
+
+    <!-- Diploma Details -->
+    <div class="row g-3">
+        <h5>Diploma Details</h5>
+        <div class="col-md-6">
+            <label for="diplomaInstitution" class="form-label">
+                <i class="bi bi-building"></i> Institution Name
+            </label>
+            <input type="text" class="form-control" id="diplomaInstitution" placeholder="Enter institution name">
+        </div>
+        <div class="col-md-6">
+            <label for="diplomaUniversity" class="form-label">
+                <i class="bi bi-mortarboard-fill"></i> University
+            </label>
+            <input type="text" class="form-control" id="diplomaUniversity" placeholder="Enter university">
+        </div>
+        <div class="col-md-6">
+            <label for="diplomaBranch" class="form-label">
+                <i class="bi bi-diagram-3-fill"></i> Branch
+            </label>
+            <input type="text" class="form-control" id="diplomaBranch" placeholder="Enter branch">
+        </div>
+        <div class="col-md-6">
+            <label for="diplomaYear" class="form-label">
+                <i class="bi bi-calendar-check"></i> Year of Passing
+            </label>
+            <input type="number" class="form-control" id="diplomaYear" placeholder="Enter year">
+        </div>
+        <div class="col-md-6">
+            <label for="diplomaPercentage" class="form-label">
+                <i class="bi bi-graph-up"></i> Obtained Percentage/CGPA
+            </label>
+            <input type="text" class="form-control" id="diplomaPercentage" placeholder="Enter percentage/CGPA">
+        </div>
+    </div>
+</div>
+<!-- Section 5: Upload Documents -->
+<div class="form-section" id="section5">
+    <h3>Upload Documents</h3>
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="uploadPhoto" class="form-label">
+                <i class="bi bi-person-circle"></i> Upload Student Photo
+            </label>
+            <input type="file" class="form-control" id="uploadPhoto">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadSignature" class="form-label">
+                <i class="bi bi-pen-fill"></i> Upload Student Signature
+            </label>
+            <input type="file" class="form-control" id="uploadSignature">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadTenthMarksheet" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload 10th Marksheet
+            </label>
+            <input type="file" class="form-control" id="uploadTenthMarksheet">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadTwelfthMarksheet" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload 12th Marksheet
+            </label>
+            <input type="file" class="form-control" id="uploadTwelfthMarksheet">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadDiplomaMarksheet" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload Diploma Marksheet
+            </label>
+            <input type="file" class="form-control" id="uploadDiplomaMarksheet">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadUGMarksheet" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload UG Marksheet
+            </label>
+            <input type="file" class="form-control" id="uploadUGMarksheet">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadEntranceMarksheets" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload Entrance Examination Marksheets
+            </label>
+            <input type="file" class="form-control" id="uploadEntranceMarksheets">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadAadhaar" class="form-label">
+                <i class="bi bi-card-list"></i> Upload Aadhaar Card
+            </label>
+            <input type="file" class="form-control" id="uploadAadhaar">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadPassport" class="form-label">
+                <i class="bi bi-file-earmark-text"></i> Upload Passport
+            </label>
+            <input type="file" class="form-control" id="uploadPassport">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadFGCertificate" class="form-label">
+                <i class="bi bi-award-fill"></i> Upload FG Certificate
+            </label>
+            <input type="file" class="form-control" id="uploadFGCertificate">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadIncomeCertificate" class="form-label">
+                <i class="bi bi-cash"></i> Upload Income Certificate
+            </label>
+            <input type="file" class="form-control" id="uploadIncomeCertificate">
+        </div>
+        <div class="col-md-6">
+            <label for="uploadTransferCertificate" class="form-label">
+                <i class="bi bi-clipboard-check"></i> Upload Transfer Certificate
+            </label>
+            <input type="file" class="form-control" id="uploadTransferCertificate">
+        </div>
+    </div>
+</div>
+
+                <!-- Section 5: Declaration -->
+                <div class="form-section" id="section6">
+                    <h3>Declaration</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="declaration" required>
+                        <label class="form-check-label" for="declaration">
+                            I certify that the information submitted is true to the best of my knowledge.
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <!-- Navigation Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" class="btn btn-secondary" id="prevBtn">Previous</button>
+                    <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                    <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const sections = document.querySelectorAll(".form-section");
+        const breadcrumbItems = document.querySelectorAll(".breadcrumb-item");
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        let currentSection = 0;
+
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.classList.toggle("active", i === index);
+                breadcrumbItems[i].classList.toggle("active", i === index);
+            });
+            prevBtn.style.display = index === 0 ? "none" : "inline-block";
+            nextBtn.style.display = index === sections.length - 1 ? "none" : "inline-block";
+            submitBtn.style.display = index === sections.length - 1 ? "inline-block" : "none";
+          
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentSection++;
+            showSection(currentSection);
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentSection--;
+            showSection(currentSection);
+        });
+
+        document.getElementById("applicationForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Form Submitted Successfully!");
+        });
+
+        showSection(currentSection);
+
+        // Function to generate the application number
+    function generateApplicationNumber() {
+        const prefix = "MEC/2025/";
+        const uniqueNumber = Math.floor(1000 + Math.random() * 9000); // Generate a random 4-digit number
+        return prefix + uniqueNumber;
+    }
+
+    // Set the application number dynamically
+    document.getElementById("applicationNumber").textContent = 
+        "Application No: " + generateApplicationNumber();
+    </script>
+</body>
+</html>
